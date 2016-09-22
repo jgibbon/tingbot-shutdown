@@ -6,14 +6,12 @@ from subprocess import call
 @every(seconds=1.0)
 def loop():
     # drawing code here
-    screen.image(
-        'bg.png',
-        xy=(160, 120))
+    screen.image("bg.png", xy=(160, 120))
 
 @left_button.press
 def press():
     print 'left'
-    call(["sudo", "halt"])
+    call(["sudo", "shutdown", "-h", "now"])
 
 @right_button.press
 def press():
